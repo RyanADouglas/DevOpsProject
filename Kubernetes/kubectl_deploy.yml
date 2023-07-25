@@ -4,4 +4,4 @@
     
   tasks:
   - name: deploy regapp on kubernetes
-    command: kubectl apply -f /root/regapp-deployment.yml
+    command: kubectl apply -f regapp-deployment.yml
