@@ -21,3 +21,4 @@
 ### Configure Maven on Jenkins Console
 - Manage Jenkins > Plugins > Available Plugins > Maven Integration > Install Without Restart
 - Manage Jenkins > Tools > Maven > Unselect Install Automatically > Maven Name "maven-version number" > Maven_Home "is path of maven" i.e. /opt/maven
+- Apply > Save
