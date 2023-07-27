@@ -12,7 +12,6 @@
 
 # Jenkins Server
 - Create Linux EC2 Instance
-- Install Jenkins
-- Install Java
-- Start Jenkins
-- Access Jenkins on port 8080
+- Jenkins Installation
+- Integrate Git with Jenkins
+
