@@ -17,4 +17,7 @@
   JAVA_HOME=/usr/lib/jvm/java-11-openjdk-11.0.19.0.7-1.amzn2.0.1.x86_64
   # get java path from cd /usr/lib/jvm
   PATH=$PATH:$HOME/bin:$JAVA_HOME:$M2_HOME:$M2
- ```
+  ```
+### Configure Maven on Jenkins Console
+- Manage Jenkins > Plugins > Available Plugins > Maven Integration > Install Without Restart
+- Manage Jenkins > Tools > Maven > Unselect Install Automatically > Maven Name "maven-version number" > Maven_Home "is path of maven" i.e. /opt/maven
