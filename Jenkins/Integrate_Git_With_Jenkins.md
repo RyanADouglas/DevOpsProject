@@ -7,4 +7,4 @@
   ```
 
 ### Configure Giton Jenkins Web Console
-- Manage Jenkins > Plugins > Available > github > Select Github Branch Source > Install without restart
+- Manage Jenkins > Plugins > Available > github > Install without restart
