@@ -24,3 +24,5 @@
   ```sh
   cat /var/lib/jenkins/secrets/initialAdminPassword
   ```
+### Configruing Jenkins
+- To change password select: Admin > Configure > Password
