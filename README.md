@@ -14,4 +14,5 @@
 - Create Linux EC2 Instance
 - Jenkins Installation
 - Integrate Git with Jenkins
+- Maven Installation
 
