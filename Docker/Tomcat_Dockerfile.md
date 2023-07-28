@@ -3,7 +3,7 @@
   ```sh
   FROM tomat
   RUN cp -R /usr/local/tomcat/webapps.dist/* /usr/local/tomcat/webapps
-  RUN mkdir /opt/tomcat/
+  COPY ./webapp.war /usr/local/tomcat/webapps
   ```
 ### Build Docker Image
 - Build image using dockerfile
