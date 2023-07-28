@@ -56,6 +56,12 @@ Enable connection between Docker-host and Jenkins
 		- Source files: webapp/target/*.war
  		- Remove prefix: webapp/target
  		- Remote directory: //opt//docker
+		- Exec Command:
+  		- cd /opt/docker;
+    	- docker build -t regapp:v1 .;
+    	- docker stop registerapp;
+    	- docker rm registerapp;
+    	- docker run -d --name registerapp -p 8087:8080 regapp:v1
 	 
 
 - Apply and Save
