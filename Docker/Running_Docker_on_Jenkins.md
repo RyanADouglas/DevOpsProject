@@ -20,43 +20,42 @@
 
 ### Configuration between Docker-host and Jenkins
 
-Install "publish Over SSH"
- - Manage Jenkins > Plugins > Available > Publish over SSH
+- Install "publish Over SSH"
+	- Manage Jenkins > Plugins > Available > Publish over SSH > Install without restart
 
 Enable connection between Docker-host and Jenkins
 
-- Manage Jenkins > Configure System > Publish Over SSH > SSH Servers
+- Manage Jenkins > System > Publish Over SSH > SSH Servers > Add
 
 	- SSH Servers:
-                - Name: docker-host
-		- Hostname: ServerIP
+  	- Name: docker-host
+		- Hostname: PrivateIP of Docker Server
 		- username: dockeradmin
-               
-       -  Advanced > choose use password authentication, or use a different key
-		 - password: *******
+  	- Advanced > choose use password authentication, or use a different key
+  	- password: *******
  
-### Steps to create "Deploy_on_Docker_Host" Jenkin job
- #### From Jenkins home page select "New Item"
-   - Enter an item name: `Deploy_on_Docker_Host`
-     - Copy from: `Deploy_on_Tomcat_Server`
-     
-   - *Source Code Management:*
-      - Repository: `https://github.com/yankils/hello-world.git`
-      - Branches to build : `*/master`  
-   - *Poll SCM* :      - `* * * *`
+### Configure BuildandDeployonContainer Jenkins job
+- On Jenkins Dashboard select New Item
+- Enter an item name: BuildandDeployonContainer
+- Copy from: BuildAndDeployJob
+    
+- *Source Code Management:*
+	- Repository: https://github.com/RyanADouglas/hello-world.git
+  - Branches to build : */master  
+	- *Poll SCM* : * * * * *
 
-   - *Build:*
-     - Root POM:`pom.xml`
-     - Goals and options: `clean install package`
+  - *Build:*
+     - Root POM: pom.xml
+     - Goals and options: clean instal
 
  - *Post-build Actions*
-   - Send build artifacts over SSH
-     - *SSH Publishers*
-      - SSH Server Name: `docker-host`
-       - `Transfers` >  `Transfer set`
-            - Source files: `webapp/target/*.war`
-	       - Remove prefix: `webapp/target`
-	       - Remote directory: `//home//ansadmin` or `.`
+	- Send build artifacts over SSH
+  	- *SSH Publishers*
+  	- SSH Server Name: docker-host
+	- Transfers >  Transfer set
+		- Source files: webapp/target/*.war
+ 		- Remove prefix: webapp/target
+ 		- Remote directory: //opt//docker
 	 
 
-Save and run the job now.
+- Apply and Save
