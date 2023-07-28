@@ -11,7 +11,7 @@
   # Verify docker has started
   service docker status
   ```
-- Create docker amdin user
+- Create docker admin user
   ```sh
   useradd dockeradmin
   passwd dockeradmin
