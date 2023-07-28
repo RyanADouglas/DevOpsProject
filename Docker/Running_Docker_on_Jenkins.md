@@ -46,7 +46,7 @@ Enable connection between Docker-host and Jenkins
 
   - *Build:*
      - Root POM: pom.xml
-     - Goals and options: clean instal
+     - Goals and options: clean install
 
  - *Post-build Actions*
 	- Send build artifacts over SSH
