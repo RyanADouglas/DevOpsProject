@@ -13,22 +13,27 @@
 - comment PasswordAuthentication No
 <img width="448" alt="sshd_config" src="https://github.com/RyanADouglas/DevOpsProject/assets/136330853/62ef2e0d-dec6-473d-9591-2642fe8d01a4">
 
+- Reload sshd service
+  ```shh
+  service sshd reload
+  ```
+
 ### Configuration between Docker-host and Jenkins
 
 Install "publish Over SSH"
- - `Manage Jenkins` > `Manage Plugins` > `Available` > `Publish over SSH`
+ - Manage Jenkins > Plugins > Available > Publish over SSH
 
 Enable connection between Docker-host and Jenkins
 
-- `Manage Jenkins` > `Configure System` > `Publish Over SSH` > `SSH Servers` 
+- Manage Jenkins > Configure System > Publish Over SSH > SSH Servers
 
 	- SSH Servers:
-                - Name: `docker-host`
-		- Hostname:`<ServerIP>`
-		- username: `dockeradmin`
+                - Name: docker-host
+		- Hostname: ServerIP
+		- username: dockeradmin
                
-       -  `Advanced` > chose `Use password authentication, or use a different key`
-		 - password: `*******`
+       -  Advanced > choose use password authentication, or use a different key
+		 - password: *******
  
 ### Steps to create "Deploy_on_Docker_Host" Jenkin job
  #### From Jenkins home page select "New Item"
