@@ -39,7 +39,7 @@
   ```sh
   cd /opt/
   mkdir docker
-- Change docker ownership to ans admin
+- Change docker ownership to ansadmin
   ```sh
   chown ansadmin:ansadmin docker
   ```
