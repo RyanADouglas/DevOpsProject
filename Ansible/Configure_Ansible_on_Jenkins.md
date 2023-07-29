@@ -10,10 +10,10 @@
   -  Apply > Save
 
 ### Create Deply_on_Container_using_Ansible
-- Enter an item name: `Deploy_on_Container_using_ansible`
-  - Copy from: `Deploy_on_Container`  
+- Enter an item name: Deploy_on_Container_using_ansible
+  - Copy from: Deploy_on_Container 
 - *Source Code Management:*
-  - Repository: `https://github.com/yankils/hello-world.git`
+  - Repository: https://github.com/RyanADouglas/hello-world.git
   - Branches to build : */master
 - *Poll SCM* : * * * * *
 - *Build:*
