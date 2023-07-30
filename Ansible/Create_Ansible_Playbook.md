@@ -24,6 +24,10 @@
       command: docker build -t regapp:latest .
       args:
         chdir: /opt/docker
+    - name: create tag to push image onto dockerhub
+      command: docker tag regapp:latest nayrx07/regapp:latest
+    - name: push docker image
+      command: docker push nayrx07/regapp:latest 
   ```
 - Run ansible playbook
   ```sh
@@ -42,4 +46,26 @@
   ```sh
   docker tag "Image ID" "Dockerusername"/regapp:latest
   docker push Dockerusername/regapp:latest
+  ```
+### Create Container using Ansible Playbook
+- Create docker_deployment.yml
+```sh
+ ---
+- hosts: dockerhost
+
+  tasks:
+  - name: stop existing container
+    command: docker stop regapp-server
+    ignore_errors: yes
+
+  - name: remove the container
+    command: docker rm regapp-server
+    ignore_errors: yes
+
+  - name: remove image
+    command: docker rmi nayrx07/regapp:latest
+    ignore_errors: yes
+
+  - name: create container
+    command: docker run -d --name regapp-server -p 8082:8080 nayrx07/regapp:latest
   ```
