@@ -1,3 +1,5 @@
+EKS Is not a free service; If service is not needed delete cluster to not incur charges.
+
 # Kubernetes on EKS
 - Create EC2 Instance
 
@@ -34,12 +36,15 @@
     - CloudFormation
    <img width="931" alt="IAM" src="https://github.com/RyanADouglas/DevOpsProject/assets/136330853/6478d37a-7bff-43f4-91a0-f72473fcb407">
 
-# Create Cluster Node
+### Create Cluster Node
 - Create Cluster
   ```sh
   eksctl create cluster --name "Name of Cluster" \
   --region "Region-Name" \
   --node-type "Instance-Type"
   ```
-
+### To delete eks cluster
+  ```sh
+  eksctl delete cluster "Name of Cluster" --region "Region-Name"
+  ```
   
